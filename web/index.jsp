@@ -23,8 +23,9 @@
         Ejercicio ejercicio = new Ejercicio(1, ejercicioDAO.get(1).getNombreEjercicio(), ejercicioDAO.get(1).getDescripcionEjercicio(), ejercicioDAO.get(1).getCategoriaEjercicio(),
                 ejercicioDAO.get(1).getFechaEjercicio(), ejercicioDAO.get(1).getObservacionesEjercicio());
         
-String d = jsonTransformer.toJson(ejercicio);%>
+String d = jsonTransformer.toJson(ejercicio);
+Ejercicio e = (Ejercicio)jsonTransformer.fromJSON(d, Ejercicio.class);        %>
         
-        <p><%=d%></p>
+        <p><%=d+" "+e.getNombreEjercicio()%></p>
     </body>
 </html>
