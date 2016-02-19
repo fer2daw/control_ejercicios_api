@@ -1,8 +1,8 @@
-package presentacion.json.impl;
+package com.ferdeveloper.presentacion.json.impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import presentacion.json.JsonTransformer;
+import com.ferdeveloper.presentacion.json.JsonTransformer;
 
 /**
  *
@@ -11,7 +11,7 @@ import presentacion.json.JsonTransformer;
 public class JsonTransformerImplJackson implements JsonTransformer {
 
     @Override
-    public String toJson(Object data) {
+    public String toJSON(Object data) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
 

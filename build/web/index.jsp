@@ -4,11 +4,11 @@
     Author     : fernandoarenasdev
 --%>
 
-<%@page import="negocio.dominio.Ejercicio"%>
-<%@page import="presentacion.json.impl.JsonTransformerImplJackson"%>
-<%@page import="presentacion.json.JsonTransformer"%>
-<%@page import="persistencia.dao.impl.EjercicioDAOImplJDBC"%>
-<%@page import="persistencia.dao.EjercicioDAO"%>
+<%@page import="com.ferdeveloper.negocio.dominio.Ejercicio"%>
+<%@page import="com.ferdeveloper.presentacion.json.impl.JsonTransformerImplJackson"%>
+<%@page import="com.ferdeveloper.presentacion.json.JsonTransformer"%>
+<%@page import="com.ferdeveloper.persistencia.dao.impl.EjercicioDAOImplJDBC"%>
+<%@page import="com.ferdeveloper.persistencia.dao.EjercicioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

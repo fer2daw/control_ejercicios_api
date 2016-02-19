@@ -1,4 +1,4 @@
-package presentacion.json;
+package com.ferdeveloper.presentacion.json;
 
 /**
  *
@@ -6,7 +6,7 @@ package presentacion.json;
  */
 public interface JsonTransformer {
 
-    String toJson(Object data);
+    String toJSON(Object data);
 
     <T> T fromJSON(String json, Class<T> clazz);
 }
