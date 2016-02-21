@@ -31,7 +31,7 @@ public class EjercicioController {
     EjercicioDAO ejercicioDAO;
 
     // GET
-    @RequestMapping(value = "/Ejercicio/{idEjercicio}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/ejercicio/{idEjercicio}", method = RequestMethod.GET, produces = "application/json")
     public void read(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @PathVariable("idEjercicio") int idEjercicio) {
         try {
             Ejercicio ejercicio = ejercicioDAO.get(idEjercicio);
@@ -52,7 +52,7 @@ public class EjercicioController {
     }
 
     // INSERT
-    @RequestMapping(value = "/Ejercicio", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "/ejercicio", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public void insert(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @RequestBody String jsonEntrada) {
         try {
             Ejercicio ejercicio = (Ejercicio) jsonTransformer.fromJSON(jsonEntrada, Ejercicio.class);
@@ -75,8 +75,8 @@ public class EjercicioController {
     }
 
     // UPDATE
-    @RequestMapping(value = "/Ejercicio", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
-    public void update(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @RequestBody String jsonEntrada) {
+    @RequestMapping(value = "/ejercicio/{idEjercicio}", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
+    public void update(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @RequestBody String jsonEntrada, @PathVariable("idEjercicio") int idEjercicio) {
         try {
             Ejercicio ejercicio = (Ejercicio) jsonTransformer.fromJSON(jsonEntrada, Ejercicio.class);
             ejercicioDAO.update(ejercicio);
@@ -111,7 +111,7 @@ public class EjercicioController {
     }
 
     // DELETE
-    @RequestMapping(value = "/Ejercicio/{idEjercicio}", method = RequestMethod.DELETE, produces = "application/json")
+    @RequestMapping(value = "/ejercicio/{idEjercicio}", method = RequestMethod.DELETE, produces = "application/json")
     public void delete(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @PathVariable("idEjercicio") int idEjercicio) {
         try {
             ejercicioDAO.delete(idEjercicio);
@@ -140,7 +140,7 @@ public class EjercicioController {
     }
 
     // LIST
-    @RequestMapping(value = "/Ejercicio", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/ejercicios", method = RequestMethod.GET, produces = "application/json")
     public void find(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         try {
             List<Ejercicio> ejercicios = ejercicioDAO.findAll();
@@ -170,7 +170,7 @@ public class EjercicioController {
     }
     
     // FIND BY CATEGORIA
-    @RequestMapping(value = "/Categoria-Ejercicio/{categoriaEjercicio}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/categoria-ejercicio/{categoriaEjercicio}", method = RequestMethod.GET, produces = "application/json")
     public void find(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @PathVariable("categoriaEjercicio") String categoriaEjercicio) {
         try {
             List<Ejercicio> ejercicios = ejercicioDAO.findByCategoria(categoriaEjercicio);
